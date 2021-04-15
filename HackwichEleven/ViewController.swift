@@ -22,6 +22,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mapView.delegate = self
+        
+        
         // Do any additional setup after loading the view.
     centerMapOnLocation(location: initialLocation)
         //add annotation in viewDidLoad
@@ -53,3 +57,31 @@ class ViewController: UIViewController {
 
 }
 
+extension ViewController: MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "AnnotationView")
+        
+        if annotationView == nil {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "AnnotationView")
+        }
+        
+        if let title = annotation.title, title == "UBAE" {
+            annotationView?.image = UIImage(named: "ubae.shopify_540x")
+        } else if let title = annotation.title, title == "DaSpot" {
+            annotationView?.image = UIImage(named: "daspot")
+        }
+        else if let title = annotation.title, title == "Coquitos" {
+           annotationView?.image = UIImage(named: "coquitos")
+       }
+        
+        annotationView?.canShowCallout = true
+        
+        return annotationView
+    }
+    
+    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+        print("The annotation was selected: \(String(describing: view.annotation?.title))")
+    }
+}
