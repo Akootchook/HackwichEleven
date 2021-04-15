@@ -29,6 +29,16 @@ class ViewController: UIViewController {
         let restaurantOne = restaurantAnnotation(title: "DaSpot", type: "UHWO Cafe", coordinate: CLLocationCoordinate2D(latitude: 21.356302499275664, longitude: -158.0562190033631))
         mapView.addAnnotation(restaurantOne)
         
+        let restaurantTwo = restaurantAnnotation(title: "Coquitos", type: "Cuban Food", coordinate: CLLocationCoordinate2D(latitude: 21.447662617712236, longitude: -158.1893764883707))
+        mapView.addAnnotation(restaurantTwo)
+        //21.447662617712236, -158.1893764883707 location of Coquitos restaurant in Waianae
+     
+        let restaurantThree = restaurantAnnotation(title: "UBAE", type: "Bakery Shop", coordinate: CLLocationCoordinate2D(latitude: 21.32168635371063, longitude: -157.87606350186684))
+        mapView.addAnnotation(restaurantThree)
+        //21.32168635371063, -157.87606350186684 UBAE food shop
+        
+     
+        
     }
     
     func centerMapOnLocation(location: CLLocation)
