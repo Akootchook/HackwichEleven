@@ -12,7 +12,11 @@ import CoreLocation
 class ViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
-    let initialLocation = CLLocation(latitude: 21.356302499275664, longitude: -158.0562190033631)
+    let initialLocation = CLLocation(latitude: 21.391940, longitude: -158.015385)
+    
+    // center on Waipahu
+  //  21.391940, -158.015385
+    
     
     //declare region radius around our initialLocation
     
@@ -33,7 +37,7 @@ class ViewController: UIViewController {
         let restaurantOne = restaurantAnnotation(title: "DaSpot", type: "UHWO Cafe", coordinate: CLLocationCoordinate2D(latitude: 21.356302499275664, longitude: -158.0562190033631))
         mapView.addAnnotation(restaurantOne)
         
-        let restaurantTwo = restaurantAnnotation(title: "Coquitos", type: "Cuban Food", coordinate: CLLocationCoordinate2D(latitude: 21.447662617712236, longitude: -158.1893764883707))
+        let restaurantTwo = restaurantAnnotation(title: "Coquitos", type: "Latin Food", coordinate: CLLocationCoordinate2D(latitude: 21.447662617712236, longitude: -158.1893764883707))
         mapView.addAnnotation(restaurantTwo)
         //21.447662617712236, -158.1893764883707 location of Coquitos restaurant in Waianae
      
@@ -58,11 +62,11 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: MKMapViewDelegate {
-    
+    /*
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "AnnotationView")
-        
+     
         if annotationView == nil {
             annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "AnnotationView")
         }
@@ -76,12 +80,16 @@ extension ViewController: MKMapViewDelegate {
            annotationView?.image = UIImage(named: "coquitos")
        }
         
-        annotationView?.canShowCallout = true
+        //annotationView?.canShowCallout = true
         
         return annotationView
     }
     
     func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
         print("The annotation was selected: \(String(describing: view.annotation?.title))")
+ 
+
     }
-}
+         */
+    }
+
