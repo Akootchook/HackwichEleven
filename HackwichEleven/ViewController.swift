@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     
     //declare region radius around our initialLocation
     
-    let regionRadius: CLLocationDistance = 10000
+    let regionRadius: CLLocationDistance = 50000
     
    // UHWO Campus Lat/Long 21.356302499275664, -158.0562190033631
     
@@ -33,8 +33,8 @@ class ViewController: UIViewController {
         mapView.addAnnotation(restaurantTwo)
         //21.447662617712236, -158.1893764883707 location of Coquitos restaurant in Waianae
      
-        let restaurantThree = restaurantAnnotation(title: "UBAE", type: "Bakery Shop", coordinate: CLLocationCoordinate2D(latitude: 21.32168635371063, longitude: -157.87606350186684))
-        mapView.addAnnotation(restaurantThree)
+        let bakeryOne = bakeryAnnotation(title: "UBAE", type: "Bakery Shop", coordinate: CLLocationCoordinate2D(latitude: 21.32168635371063, longitude: -157.87606350186684))
+        mapView.addAnnotation(bakeryOne)
         //21.32168635371063, -157.87606350186684 UBAE food shop
         
      
